@@ -399,10 +399,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed49d2d65b2b69542a6e24947821c37e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  influence: 0
-  ASpeed: 350
+  influence: 1
+  ASpeed: 800
   AMass: 8
-  AFriction: 0.8
+  AFriction: 0.5
+  AMaxVelocity: 20
   BSpeed: 80
   BMass: 0.05
   BFriction: 5

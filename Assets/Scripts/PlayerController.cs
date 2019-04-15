@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     public float ASpeed = 250.0f;
     public float AMass = 8.0f;
     public float AFriction = 0.8f;
+    public float AMaxVelocity = 20.0f;
     public float BSpeed = 120.0f;
     public float BMass = 0.05f;
     public float BFriction = 5.0f;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour {
 
         Rigidbody body = GetComponent<Rigidbody>();
 		body.mass = playerMass;
+        body.maxAngularVelocity += influence * AMaxVelocity;
 
         Collider coll = GetComponent<Collider>();
         coll.material.dynamicFriction = playerFriction;
