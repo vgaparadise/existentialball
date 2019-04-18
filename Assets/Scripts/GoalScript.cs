@@ -5,11 +5,11 @@ using UnityEngine;
 public class GoalScript : MonoBehaviour
 {
     //You set the goal type in the unity editor when you add the entity (goal) to the level
-    public char goal_type;
+    public bool isAGoal;
     // Start is called before the first frame update
     void Start()
     {
-        this.goal_type = goal_type;
+        this.isAGoal = isAGoal;
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class GoalScript : MonoBehaviour
     {
         //Load the next level based on which goal type the player chose
         string level_name;
-        if(goal_type == 'A')
+        if(isAGoal)
         {
             level_name = "A" + GameManager.next_A;
             GameManager.next_A += 1;
