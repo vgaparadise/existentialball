@@ -24,14 +24,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    //This will be called by the main menu
-    void StartGame(string start_level)
-    {
-        current_level = start_level;
-        Application.LoadLevel(start_level);
-    }
-
-
     void GoalReached()
     {
         influence += influence_this_level;   

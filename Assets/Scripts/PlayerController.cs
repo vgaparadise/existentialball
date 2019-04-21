@@ -4,13 +4,13 @@ using UnityEngine;
 using System;
 
 public class PlayerController : MonoBehaviour {
-    public float ASpeed = 250.0f;
-    public float AMass = 8.0f;
-    public float AFriction = 0.8f;
-    public float AMaxVelocity = 20.0f;
-    public float BSpeed = 120.0f;
+    public float ASpeed = 900.0f;
+    public float AMass = 5.0f;
+    public float AFriction = 0.5f;
+    public float AMaxVelocity = 30.0f;
+    public float BSpeed = 150.0f;
     public float BMass = 0.05f;
-    public float BFriction = 5.0f;
+    public float BFriction = 1.2f;
     
     private float playerSpeed;
     private float playerMass;
