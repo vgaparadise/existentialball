@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
     
+    public static string current_level;
     //these are the global variables to remember what the next level of the player in either the A or B.
     public static int next_A = 1;
     public static int next_B = 1;
+    public static float influence = 0.5f;
+    public static float influence_this_level = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +22,25 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    //This will be called by the main menu
+    void StartGame(string start_level)
+    {
+        current_level = start_level;
+        Application.LoadLevel(start_level);
+    }
+
+
+    void GoalReached()
+    {
+        influence += influence_this_level;   
+    }
+
+    void Reset()
+    {
+        influence_this_level = 0;
+        Application.LoadLevel(current_level);
     }
 
 }

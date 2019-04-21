@@ -4,7 +4,6 @@ using UnityEngine;
 using System;
 
 public class PlayerController : MonoBehaviour {
-    public float influence;
     public float ASpeed = 250.0f;
     public float AMass = 8.0f;
     public float AFriction = 0.8f;
@@ -18,13 +17,13 @@ public class PlayerController : MonoBehaviour {
     private float playerFriction;
 	// Use this for initialization
 	void Start () {
-        playerSpeed = Math.Min(ASpeed, BSpeed) + (influence * Math.Abs(ASpeed - BSpeed));
-        playerMass = Math.Min(AMass, BMass) + (influence * Math.Abs(AMass - BMass));
-        playerFriction = Math.Min(AFriction, BFriction) + ((1 - influence) * Math.Abs(AFriction - BFriction));
+        playerSpeed = Math.Min(ASpeed, BSpeed) + (GameManager.influence * Math.Abs(ASpeed - BSpeed));
+        playerMass = Math.Min(AMass, BMass) + (GameManager.influence * Math.Abs(AMass - BMass));
+        playerFriction = Math.Min(AFriction, BFriction) + ((1 - GameManager.influence) * Math.Abs(AFriction - BFriction));
 
         Rigidbody body = GetComponent<Rigidbody>();
 		body.mass = playerMass;
-        body.maxAngularVelocity += influence * AMaxVelocity;
+        body.maxAngularVelocity += GameManager.influence * AMaxVelocity;
 
         Collider coll = GetComponent<Collider>();
         coll.material.dynamicFriction = playerFriction;
