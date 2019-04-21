@@ -20,19 +20,6 @@ public class GoalScript : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        //Load the next level based on which goal type the player chose
-        string level_name;
-        if(isAGoal)
-        {
-            level_name = "A" + GameManager.next_A;
-            GameManager.next_A += 1;
-        }
-        else
-        {
-            level_name = "B" + GameManager.next_B;
-            GameManager.next_B += 1;
-        }
-            
-        Application.LoadLevel(level_name);
+        GameManager.GoalReached(isAGoal);
     }
 }

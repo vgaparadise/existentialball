@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 
 public class PlayerController : MonoBehaviour {
+    public static PlayerController PLAYER;
+    public float influence = 0.5f;
     public float ASpeed = 900.0f;
     public float AMass = 5.0f;
     public float AFriction = 0.5f;
@@ -12,23 +14,25 @@ public class PlayerController : MonoBehaviour {
     public float BMass = 0.05f;
     public float BFriction = 1.2f;
     
-    private float playerSpeed;
+    public float playerSpeed;
     private float playerMass;
     private float playerFriction;
 	// Use this for initialization
 	void Start () {
-        playerSpeed = Math.Min(ASpeed, BSpeed) + (GameManager.influence * Math.Abs(ASpeed - BSpeed));
-        playerMass = Math.Min(AMass, BMass) + (GameManager.influence * Math.Abs(AMass - BMass));
-        playerFriction = Math.Min(AFriction, BFriction) + ((1 - GameManager.influence) * Math.Abs(AFriction - BFriction));
+        playerSpeed = Math.Min(ASpeed, BSpeed) + (influence * Math.Abs(ASpeed - BSpeed));
+        playerMass = Math.Min(AMass, BMass) + (influence * Math.Abs(AMass - BMass));
+        playerFriction = Math.Min(AFriction, BFriction) + ((1 - influence) * Math.Abs(AFriction - BFriction));
 
         Rigidbody body = GetComponent<Rigidbody>();
 		body.mass = playerMass;
-        body.maxAngularVelocity += GameManager.influence * AMaxVelocity;
+        body.maxAngularVelocity += influence * AMaxVelocity;
 
         Collider coll = GetComponent<Collider>();
         coll.material.dynamicFriction = playerFriction;
         coll.material.staticFriction = playerFriction;
-	}
+        DontDestroyOnLoad(this.gameObject);
+        PLAYER = this;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -43,4 +47,9 @@ public class PlayerController : MonoBehaviour {
 
 
 	}
+    public void PowerupGet(float powerup)
+    {
+        influence += powerup;
+        Debug.Log("Influence now: " + influence);
+    }
 }
