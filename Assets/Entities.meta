@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Entities.meta
+guid: 801ff1f70ddbab24d93312efe3bbf6b6
+=======
 guid: 8dbdcc3bfcef1974eaa82b6e6a9bbdc3
+>>>>>>> a1_map:Assets/Models.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
