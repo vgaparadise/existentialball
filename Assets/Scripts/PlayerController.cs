@@ -42,9 +42,6 @@ public class PlayerController : MonoBehaviour {
         Rigidbody body = GetComponent<Rigidbody>();
         //make the movement in terms of the camera
         Vector3 relativeMovement = Camera.main.transform.TransformDirection(orig_direction);
-        // relativeMovement.y = relativeMovement.x;
-        // relativeMovement.x = relativeMovement.z;
-        // relativeMovement.z = relativeMovement.y;
         relativeMovement.y = 0f;
         /*******************************/
         //OLD MOVEMENT CODE THAT I CANNOT GET TO WORK WITH RELATIVE CAMERA 
@@ -52,7 +49,7 @@ public class PlayerController : MonoBehaviour {
         /*******************************/
         //Multiply speed times time to be framerate independent
         //body.AddForce(relativeMovement * playerSpeed * Time.deltaTime);
-        print("orig: " + orig_direction + " rm: " + relativeMovement);
+        // print("orig: " + orig_direction + " rm: " + relativeMovement);
     }
     public void PowerupGet(float powerup)
     {

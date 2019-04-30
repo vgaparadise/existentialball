@@ -251,23 +251,23 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2bfe63420a859274d917721a8b7f9a31, type: 2}
+      objectReference: {fileID: 2100000, guid: 830b7a0d0812a2948a6ce5814ce12c69, type: 3}
     - target: {fileID: 2300002, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2bfe63420a859274d917721a8b7f9a31, type: 2}
+      objectReference: {fileID: 2100000, guid: 830b7a0d0812a2948a6ce5814ce12c69, type: 3}
     - target: {fileID: 2300004, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2bfe63420a859274d917721a8b7f9a31, type: 2}
+      objectReference: {fileID: 2100000, guid: 830b7a0d0812a2948a6ce5814ce12c69, type: 3}
     - target: {fileID: 2300006, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2bfe63420a859274d917721a8b7f9a31, type: 2}
+      objectReference: {fileID: 2100000, guid: 830b7a0d0812a2948a6ce5814ce12c69, type: 3}
     - target: {fileID: 2300008, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2bfe63420a859274d917721a8b7f9a31, type: 2}
+      objectReference: {fileID: 2100000, guid: 830b7a0d0812a2948a6ce5814ce12c69, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
 --- !u!1 &642686663 stripped
@@ -427,7 +427,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.4745098, g: 0.19215688, b: 0.28570533, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
