@@ -482,7 +482,17 @@ PrefabInstance:
     - target: {fileID: 4395555247578547551, guid: 3ccc57334f0a8524692b2b6f8212db0f,
         type: 3}
       propertyPath: AMass
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395555247578547551, guid: 3ccc57334f0a8524692b2b6f8212db0f,
+        type: 3}
+      propertyPath: BSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395555247578547551, guid: 3ccc57334f0a8524692b2b6f8212db0f,
+        type: 3}
+      propertyPath: BMass
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ccc57334f0a8524692b2b6f8212db0f, type: 3}
