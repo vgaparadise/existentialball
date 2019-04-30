@@ -37,18 +37,22 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Get both the axis of control and put them in a vector
-        var orig_direction = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        var orig_direction = new Vector3(Input.GetAxis("Vertical"), 0f, -Input.GetAxis("Horizontal"));
         //grab hold of the body
         Rigidbody body = GetComponent<Rigidbody>();
         //make the movement in terms of the camera
         Vector3 relativeMovement = Camera.main.transform.TransformDirection(orig_direction);
-        relativeMovement.y = 0;
+        // relativeMovement.y = relativeMovement.x;
+        // relativeMovement.x = relativeMovement.z;
+        // relativeMovement.z = relativeMovement.y;
+        relativeMovement.y = 0f;
         /*******************************/
         //OLD MOVEMENT CODE THAT I CANNOT GET TO WORK WITH RELATIVE CAMERA 
-        //body.AddTorque(orig_direction * playerSpeed * Time.deltaTime);
+        body.AddTorque(relativeMovement * playerSpeed * Time.deltaTime);
         /*******************************/
         //Multiply speed times time to be framerate independent
-        body.AddForce(relativeMovement * playerSpeed * Time.deltaTime);
+        //body.AddForce(relativeMovement * playerSpeed * Time.deltaTime);
+        print("orig: " + orig_direction + " rm: " + relativeMovement);
     }
     public void PowerupGet(float powerup)
     {
