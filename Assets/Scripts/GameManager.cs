@@ -30,14 +30,18 @@ public class GameManager : MonoBehaviour
         //influence_past = influence;
         if (isAGoal)
         {
-            next_A++;
+            if(current_level.Contains("A"))
+                next_A++;
             current_level = "A" + next_A;
-             
+            
+
         }
         else
         {
-            next_B++;
+            if (current_level.Contains("B"))
+                next_B++;
             current_level = "B" + next_B;
+            
         }
         Application.LoadLevel(current_level);
     }

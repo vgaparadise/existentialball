@@ -6,14 +6,23 @@ public class MenuScript : MonoBehaviour
 {
     public Button B;
     public Button A;
+    public Button DEBUG_START;
+    public string force_level_load;
     // Start is called before the first frame update
     void Start()
     {
+        this.DEBUG_START = DEBUG_START;
         this.B = B;
         this.A = A;
         B.onClick.AddListener(BOnClick);
         A.onClick.AddListener(AOnClick);
+        DEBUG_START.onClick.AddListener(DOnClick);
     }
+    void DOnClick()
+    {
+        GameManager.StartGame(force_level_load);
+    }
+
 
     void BOnClick()
     {
