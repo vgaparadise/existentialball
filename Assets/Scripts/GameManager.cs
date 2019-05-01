@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         //influence_past = influence;
         if (current_level.Contains("A")) //if we just completed an A, go a++
             next_A++;
-        else //if we just completed a b
+        else if (current_level.Contains("B")) //if we just completed a b
         {
             next_B++;
         }
