@@ -10,6 +10,7 @@ public class PlayerSpawn : MonoBehaviour
     {
         //get the player and bring them in the level
         this.player = GameObject.Find("Player");
+
         Respawn();
       
     }
@@ -24,6 +25,7 @@ public class PlayerSpawn : MonoBehaviour
     {
         //make it so the player spawns with 0 velocity / angular velocity
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         player.transform.position = this.transform.position;
     }
 }
