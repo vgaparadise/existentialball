@@ -68,7 +68,14 @@ public class PlayerController : MonoBehaviour {
     }
     public void PowerupGet(float powerup)
     {
-        influence += powerup;
+        if (GameManager.current_level.Contains("B"))
+        {
+            influence -= .16f;
+        }else if (GameManager.current_level.Contains("A"))
+        {
+            influence += .16f;
+        }
+
         Debug.Log("Influence now: " + influence);
     }
 }
