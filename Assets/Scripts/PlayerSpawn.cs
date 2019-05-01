@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
+using System.Diagnostics;
+using System.Threading;
 public class PlayerSpawn : MonoBehaviour
 {
     public GameObject player;
@@ -15,7 +17,7 @@ public class PlayerSpawn : MonoBehaviour
         //play the music
         audioData = GetComponent<AudioSource>();
         audioData.Play(0);
-        //show the text
+        //stop showing the text after 4 seconds
 
         Respawn();
       
@@ -29,7 +31,6 @@ public class PlayerSpawn : MonoBehaviour
 
     public void Respawn()
     {
-        Debug.Log("respawning player");
         //make it so the player spawns with 0 velocity / angular velocity
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
