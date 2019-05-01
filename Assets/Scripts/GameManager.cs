@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 {
 
     
-    public static string current_level = "A1"; //default to A1 in weird cases (like not going through the main menu)
+    public static string current_level = "menu";
     //these are the global variables to remember what the next level of the player in either the A or B.
     public static int next_A = 1;
     public static int next_B = 1;
