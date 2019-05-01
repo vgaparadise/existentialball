@@ -28,18 +28,23 @@ public class GameManager : MonoBehaviour
     {
         //set the past influence equal to what it is now since the player successfully completed the level
         //influence_past = influence;
+        if (current_level.Contains("A")) //if we just completed an A, go a++
+            next_A++;
+        else //if we just completed a b
+        {
+            next_B++;
+        }
+
+
         if (isAGoal)
         {
-            if(current_level.Contains("A"))
-                next_A++;
             current_level = "A" + next_A;
             
 
         }
         else
         {
-            if (current_level.Contains("B"))
-                next_B++;
+
             current_level = "B" + next_B;
             
         }
