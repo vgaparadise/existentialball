@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/B3.unity
     guid: 9833b77f86c478c42aa6de2d561700a5
+  - enabled: 1
+    path: Assets/Scenes/A3.unity
+    guid: b72f5a78151034949bbafd752c5d6049
   m_configObjects: {}
