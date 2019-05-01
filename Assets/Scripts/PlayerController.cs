@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
     public float BSpeed = 150.0f;
     public float BMass = 0.05f;
     public float BFriction = 1.2f;
-    
+    int paused = 1;
     public float playerSpeed;
     private float playerMass;
     private float playerFriction;
@@ -36,6 +36,21 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (paused == 1)
+            {
+                Time.timeScale = 0;
+                paused = 0;
+            }
+
+            else
+            {
+                Time.timeScale = 1;
+                paused = 1;
+            }
+ 
+        }
         //Get both the axis of control and put them in a vector
         var orig_direction = new Vector3(Input.GetAxis("Vertical"), 0f, -Input.GetAxis("Horizontal"));
         //grab hold of the body

@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     public static void GoalReached(bool isAGoal)
     {
+        Debug.Log("Next A: " + next_A + " Next B: " + next_B);
         //set the past influence equal to what it is now since the player successfully completed the level
         //influence_past = influence;
         if (current_level.Contains("A")) //if we just completed an A, go a++
@@ -34,7 +35,14 @@ public class GameManager : MonoBehaviour
         {
             next_B++;
         }
-
+        if(next_A == 4 || next_B == 4)
+        {
+            next_A = 1;
+            next_B = 1;
+            current_level = "menu";
+            Application.LoadLevel("GG");
+            return;
+        }
 
         if (isAGoal)
         {
@@ -50,18 +58,12 @@ public class GameManager : MonoBehaviour
         }
         Application.LoadLevel(current_level);
     }
-    //THIS IS BROKEN
-  
-    //THIS SHOULD BE DEPRACATED? 
-    /*
+
+
+
     public static void Reset()
     {
-        //rollback the influence to what it was before
-        influence = influence_past;
-        Debug.Log("Influence now: " + influence);
-        Application.LoadLevel(current_level);
-        
+
     }
-    */
 
 }
