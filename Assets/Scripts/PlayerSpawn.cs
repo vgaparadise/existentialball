@@ -29,9 +29,12 @@ public class PlayerSpawn : MonoBehaviour
 
     public void Respawn()
     {
+        Debug.Log("respawning player");
         //make it so the player spawns with 0 velocity / angular velocity
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        //0 out their speed
+        //player.GetComponent<PlayerController>().playerSpeed = 0f;
         player.transform.position = this.transform.position;
     }
 }
