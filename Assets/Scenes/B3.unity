@@ -248,6 +248,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.89114
       objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.99999195
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.0040106527
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.19285862
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1862841
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.09
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: c80e0ef43a2039e43888c8e7c2679ef1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
