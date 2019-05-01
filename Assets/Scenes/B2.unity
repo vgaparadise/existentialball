@@ -184,6 +184,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5523721184750149702, guid: 15f2778481f71954c892196f80693d68,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15f2778481f71954c892196f80693d68, type: 3}
 --- !u!1001 &1282185493
@@ -696,6 +701,7 @@ GameObject:
   - component: {fileID: 1599770323}
   - component: {fileID: 1599770322}
   - component: {fileID: 1599770325}
+  - component: {fileID: 1599770326}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -781,6 +787,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4
   distanceFromPlayer: {x: 3, y: 2, z: 0}
+--- !u!45 &1599770326
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599770321}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 514c18869d39eea4b85d2a86e5ef6807, type: 2}
 --- !u!1 &1735456058
 GameObject:
   m_ObjectHideFlags: 0

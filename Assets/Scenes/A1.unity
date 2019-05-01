@@ -218,7 +218,7 @@ Skybox:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162512956}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 830b7a0d0812a2948a6ce5814ce12c69, type: 3}
+  m_CustomSkybox: {fileID: 2100000, guid: 804250c4067a9dd4eaa357b47c67da7e, type: 2}
 --- !u!1001 &202108522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -284,6 +284,11 @@ PrefabInstance:
     - target: {fileID: 5523721184750149700, guid: 15f2778481f71954c892196f80693d68,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523721184750149702, guid: 15f2778481f71954c892196f80693d68,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -400,6 +400,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 33.4
       objectReference: {fileID: 0}
+    - target: {fileID: 5523721184750149702, guid: 15f2778481f71954c892196f80693d68,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15f2778481f71954c892196f80693d68, type: 3}
 --- !u!1 &796309328 stripped
@@ -577,6 +582,7 @@ GameObject:
   - component: {fileID: 1349592869}
   - component: {fileID: 1349592868}
   - component: {fileID: 1349592871}
+  - component: {fileID: 1349592872}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -662,6 +668,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 4
   distanceFromPlayer: {x: 4, y: 3, z: 0}
+--- !u!45 &1349592872
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349592867}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 804250c4067a9dd4eaa357b47c67da7e, type: 2}
 --- !u!1 &1546645370 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 8d0165436736b69468d8bb51d0f0e803,
