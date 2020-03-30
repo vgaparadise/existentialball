@@ -14,16 +14,14 @@ public class MenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.back = back;
-        this.main_menu = main_menu;
-        this.tutcan = tutcan;
         tutcan.SetActive(false);
-        this.tut = tut;
-        this.inF = inF;
-        this.DEBUG_START = DEBUG_START;
-        DEBUG_START.onClick.AddListener(DOnClick);
+        //DEBUG_START.onClick.AddListener(DOnClick);
         tut.onClick.AddListener(tutOnClick);
         back.onClick.AddListener(backOnClick);
+        if(force_level_load != null && force_level_load != "")
+        {
+            GameManager.StartGame(force_level_load);
+        }
     }
     void backOnClick()
     {

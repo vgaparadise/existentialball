@@ -13,9 +13,10 @@ public class GameManager : MonoBehaviour
 {
 
     
-    public static string current_level = "menu";
+    public static string current_level = "MainMenu";
     //these are the global variables to remember what the next level of the player in either the A or B.
     public static int next_A = 1;
+    public static bool paused = false;
     public static int next_B = 1;
     // Start is called by the main menu
     public static void StartGame(string level_start)
@@ -37,9 +38,7 @@ public class GameManager : MonoBehaviour
         }
         if(next_A == 4 || next_B == 4)
         {
-            next_A = 1;
-            next_B = 1;
-            current_level = "menu";
+            ResetGameParams();
             Application.LoadLevel("GG");
             return;
         }
@@ -59,11 +58,23 @@ public class GameManager : MonoBehaviour
         Application.LoadLevel(current_level);
     }
 
+    public static void ResetGameParams()
+    {
+        next_A = 1;
+        next_B = 1;
+        current_level = "MainMenu";
+    }
 
 
     public static void Reset()
     {
+        Application.LoadLevel(current_level);
+    }
 
+    public static void ReturnToMenu()
+    {
+        ResetGameParams();
+        Reset();
     }
 
 }

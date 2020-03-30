@@ -25,9 +25,13 @@ public class CameraMotor : MonoBehaviour {
     }
     void LateUpdate() 
     {
-        var cam_in = Input.GetAxis("Mouse X");
-        offset = Quaternion.AngleAxis(cam_in * turnSpeed, Vector3.up) * offset;
-        transform.position = target.transform.position + offset;
-        transform.LookAt(target.transform.position);
+        if(!GameManager.paused)
+        {
+            var cam_in = Input.GetAxis("Mouse X");
+            offset = Quaternion.AngleAxis(cam_in * turnSpeed, Vector3.up) * offset;
+            transform.position = target.transform.position + offset;
+            transform.LookAt(target.transform.position);
+        }
+
     }
 }

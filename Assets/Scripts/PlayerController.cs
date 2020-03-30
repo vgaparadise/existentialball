@@ -13,12 +13,23 @@ public class PlayerController : MonoBehaviour {
     public float BSpeed = 150.0f;
     public float BMass = 0.05f;
     public float BFriction = 1.2f;
-    int paused = 1;
     public float playerSpeed;
     private float playerMass;
     private float playerFriction;
-	// Use this for initialization
-	void Start () {
+    public GameObject pauseMenu;
+
+    //HACK: Prevents double pause menu instances due to donotdestroy onload
+    public void Awake()
+    {
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
+        DontDestroyOnLoad(this);
         playerSpeed = Math.Min(ASpeed, BSpeed) + (influence * Math.Abs(ASpeed - BSpeed));
         playerMass = Math.Min(AMass, BMass) + (influence * Math.Abs(AMass - BMass));
         playerFriction = Math.Min(AFriction, BFriction) + ((1 - influence) * Math.Abs(AFriction - BFriction));
@@ -38,18 +49,27 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (paused == 1)
+            if (GameManager.paused == false && GameManager.current_level != "MainMenu")
             {
+                pauseMenu.SetActive(true);
                 Time.timeScale = 0;
-                paused = 0;
+                GameManager.paused = true;
+                
             }
 
             else
             {
+                //TODO: Fix duplicated code here and in pause script
+                pauseMenu.SetActive(false);
                 Time.timeScale = 1;
-                paused = 1;
+                GameManager.paused = false;
             }
- 
+
+
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameManager.Reset();
         }
         //Get both the axis of control and put them in a vector
         var orig_direction = new Vector3(Input.GetAxis("Vertical"), 0f, -Input.GetAxis("Horizontal"));
