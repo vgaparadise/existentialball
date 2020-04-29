@@ -9,6 +9,7 @@ public class MenuScript : MonoBehaviour
     public Button DEBUG_START;
     public Button tut;
     public Button back;
+    public Button exit;
     public InputField inF;
     public string force_level_load;
     // Start is called before the first frame update
@@ -18,7 +19,8 @@ public class MenuScript : MonoBehaviour
         //DEBUG_START.onClick.AddListener(DOnClick);
         tut.onClick.AddListener(tutOnClick);
         back.onClick.AddListener(backOnClick);
-        if(force_level_load != null && force_level_load != "")
+        exit.onClick.AddListener(ExitGameFromMainMenu);
+        if (force_level_load != null && force_level_load != "")
         {
             GameManager.StartGame(force_level_load);
         }
@@ -42,5 +44,10 @@ public class MenuScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void ExitGameFromMainMenu()
+    {
+        Application.Quit();
     }
 }

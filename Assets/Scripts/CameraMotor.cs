@@ -4,24 +4,33 @@ using UnityEngine;
 //https://answers.unity.com/questions/600577/camera-rotation-around-player-while-following.html
 public class CameraMotor : MonoBehaviour {
     //what the camera will be focused on
-    public float turnSpeed = 4.0f;
+    public float turnSpeed = 10.0f;
     GameObject target;
     public Vector3 distanceFromPlayer;
+    //public Rigidbody collider; 
     private Vector3 offset;
+    //public Camera camera;
     // Use this for initialization
     void Start () {
         //find the player object
         target = GameObject.Find("Player");
-        offset = new Vector3(4, 4, 4);
+        if (GameManager.current_level == "A3")
+        {
+            offset = new Vector3(4, 4, 4);
+        } else
+        {
+            offset = new Vector3(4, 4, 4);
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
+        //collider.MovePosition(camera.transform.position);
         //this.transform.position = 
         //target.transform.position + distanceFromPlayer;
         //point the camera at the player
         //transform.LookAt(target.transform.position);
- 
+
     }
     void LateUpdate() 
     {

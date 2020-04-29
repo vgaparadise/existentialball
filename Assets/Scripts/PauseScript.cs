@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PauseScript : MonoBehaviour
 {
-    //HACK: Prevents double pause menu instances due to donotdestroy onload
-    public void Awake()
-    {
+    //HACK: Disabled b/c it didn't work
+    ////HACK: Prevents double pause menu instances due to donotdestroy onload
+    //public void Awake()
+    //{
 
-        if (FindObjectsOfType(GetType()).Length > 1)
-        {
-            Destroy(gameObject);
-        }
-    }
+    //    if (FindObjectsOfType(GetType()).Length > 1)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class PauseScript : MonoBehaviour
 
     public void Restart()
     {
+        Debug.Log("restart called");
         ResumeGame();
         GameManager.Reset();
         
@@ -30,12 +32,14 @@ public class PauseScript : MonoBehaviour
 
     public void GoToMenu()
     {
+        Debug.Log("gotomenu called");
         ResumeGame();
         GameManager.ReturnToMenu();
     }
 
     public void ExitGame()
     {
+        Debug.Log("called quit");
         Application.Quit();
     }
 

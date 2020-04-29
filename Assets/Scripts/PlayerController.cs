@@ -67,9 +67,21 @@ public class PlayerController : MonoBehaviour {
 
 
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Debug.isDebugBuild)
         {
-            GameManager.Reset();
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                GameManager.Reset();
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                GameManager.GoalReached(true);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                GameManager.GoalReached(false);
+            }
+
         }
         //Get both the axis of control and put them in a vector
         var orig_direction = new Vector3(Input.GetAxis("Vertical"), 0f, -Input.GetAxis("Horizontal"));

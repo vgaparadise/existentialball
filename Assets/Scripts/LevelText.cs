@@ -8,7 +8,6 @@ public class LevelText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.canvas = canvas;
         Invoke("HideCanvas", 3);
     }
 
@@ -17,7 +16,8 @@ public class LevelText : MonoBehaviour
     {
         
     }
-    bool HideCanvas()
+
+    bool HideCanvas() // the ide lies, this is obv used above
     {
         canvas.SetActive(false);
         return true;

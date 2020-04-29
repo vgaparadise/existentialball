@@ -10,7 +10,6 @@ public class TutmenuScript : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        this.back = back;
         back.onClick.AddListener(backOnClick);
     }
 
